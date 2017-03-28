@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<style>
+	
+	th{text-align: center;}
+	div.menus{text-align: center; padding: 40px 15px;}
+
+</style>
+</head>
+<body>
+	<nav class=navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="#" class="navbar-brand">MySite</a>
+		</div>
+	</div>
+	</nav>
+
+	<div class="container">
+	<div class="menus">
+	<div>
+	<p>your path {{ path }}</p>
+	{% for r in restaurants %}
+	<h2>{{r.name}}</h2>
+	
+        {% if r.food_set.all %}
+
+		{% if food.is_spicy %} <p> There is one dish</p> {% else %} <p> There are {{ r.food_set.all | length}} dishes </p>{% endif %}
+		<!-- <h3>No: {{forloop.counter}} </h3> -->
+		<table class="table table-bordered table-striped " align="center">
+			<thead>
+			<tr>
+			<th>name</td>
+			<th>price</th>
+			<th>intro</th>
+			<th>spicy</th>
+			</tr>
+			</thead>
+			<tbody>
+	{% for food in r.food_set.all %}
+			<tr>
+			<td>{{food.name}}</td>
+			<td>{{food.price}}</td>
+			<td>{{food.comment}}</td>
+			<td>{% if food.is_spicy %} Spicy {% else %} Not spicy {% endif %}</td>
+			</tr>
+	{% endfor %}
+			</tbody>
+		</table>
+<!-- 		<ul>
+	<td>name:  {{food.name}}</td>
+	<td>price: {{food.price}}</td>
+	<td>intro: {{food.comment}}</td>
+	<td>spicy: {% if food.is_spicy %} Spicy {% else %} Not spicy {% endif %}</td>
+</ul> -->
+	</div>
+	{% else %}
+	<p>nothing for sale</p>
+	{% endif %}
+	{% endfor %}
+	</div></div>
+</body>
+</html>

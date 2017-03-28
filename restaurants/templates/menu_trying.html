@@ -1,0 +1,13 @@
+{% size = len( r.food_set.all ) %}
+{%  if size == 1 %}
+<p> There is one dish </p>
+{% else %}
+<p> There are {{ r.food_set.all | length}} dishes </p>
+{% endif %}
+
+
+{% food_list = list(r.food_set.all()) %}
+{% food_size = len(food_list) %}
+
+<p>size: {{ food_size }}</p> 
+

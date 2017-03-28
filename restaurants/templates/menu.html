@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<style>
+	
+	th{text-align: center;}
+	div.menus{text-align: center; padding: 40px 15px;}
+
+</style>
+</head>
+<body>
+	<nav class=navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="#" class="navbar-brand">MySite</a>
+		</div>
+	</div>
+	</nav>
+
+	<div class="container">
+	<div class="menus">
+	<div>
+	<h2>{{restaurant.name}}</h2>    
+
+		 <p> There are {{ restaurant.food_set.all | length}} dishes </p>
+	
+		<table class="table table-bordered table-striped " align="center">
+			<thead>
+			<tr>
+			<th>name</td>
+			<th>price</th>
+			<th>intro</th>
+			<th>spicy</th>
+			</tr>
+			</thead>
+			<tbody>
+	{% for food in restaurant.food_set.all %}
+			<tr>
+			<td>{{food.name}}</td>
+			<td>{{food.price}}</td>
+			<td>{{food.comment}}</td>
+			<td>{% if food.is_spicy %} Spicy {% else %} Not spicy {% endif %}</td>
+			</tr>
+	{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+	
+	</div></div>
+</body>
+</html>
