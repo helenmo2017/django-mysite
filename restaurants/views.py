@@ -37,9 +37,10 @@ def comment(request, id):
             c = Comment.objects.create(
                 visitor = visitor, email = email, content = content,
                 date_time = date_time, restaurant = r )
-            f.CommentForm(initial={'content':'no comment'})
-        else:
-            f.CommentForm(initial={'content':'whatever'})   
+            f=CommentForm(initial={'content':'no comment'})
+
+    else:
+        f=CommentForm(initial={'content':'whatever'})   
                 
     return render(request, 'comments.html', locals())
 

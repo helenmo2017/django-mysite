@@ -4,18 +4,86 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 <script>
-	
+
 var a=123
 function abc(){
 var b=456
-alert(a+"&"+b)
+//alert(a+"&"+b)
 }
 abc();
-alert(a+"&"+b)
+//alert(a+"&"+b)
 
 </script>
+<script>
+window.onload = function(){
+/*	var divsToHide = document.getElementsByClassName("ad");
+
+	for(var i = 0; i < divsToHide.length; i++)
+	{
+	divsToHide[i].style.visibility="hidden";
+	}*/
+	//document.getElementsByClassName("ad")[0].style.visibility="hidden";
+
+
+/*for (i=1;i<=5;i++){
+  document.writeln("<font size='"+i+"'>hello</font>");
+}*/
+var today = new Date();
+h = today.getHours();
+m = today.getMinutes();
+s = today.getSeconds();
+str = "current time: "+h+":"+m+":"+s;
+//alert(str);
+
+abc = 1; switch(abc){ 
+	case 0: abc = 3;  alert("0"); break;
+	case 1: abc--; alert("1"); break;
+	case 2: abc += 2; alert("2"); break;
+}
+//alert (a+" & "+b+" & "+c);
+alert("abc="+abc);
+}
+
+</script>
+
 </head>
 <body>
-	test1
+
+	<script>
+	function link2course() {
+		course = prompt("請輸入課程代碼：(webProgramming, scientificComputing, MSAR)", "webProgramming");
+		if ((course=="webProgramming")||(course=="scientificComputing")||(course=="MSAR"))
+			location.href="http://mirlab.org/jang/courses/" + course;
+	}
+	</script>
+
+	<a href="javascript:link2course()">張老師的課程</a>
+
+<pre>
+ for (i=1;i<=5;i++){
+   document.writeln("<font size='"+i+"'>hello</font>");
+ }
+</pre>
+
+<xmp>
+<div class="ad">
+you can see me1
+</div>
+</xmp>
+
+<div class="ad">
+you can see me2
+</div>
+<div class="ad">
+you can see me3
+</div>
+
+
+<a href="javascript:alert('don\'t click me')"> don't click me</a>
+
+<form> <input type=text name=text1 value="ABC"> <input type=button value="=====>" onClick="this.form.text2.value=this.form.text1.value"> <input type=text name=text2 value="DEF"> </form>
+
+
+
 </body>
 </html>

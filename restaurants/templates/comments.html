@@ -52,6 +52,11 @@
 	<td><label for="content">comment</label></td>
 	<td><textarea name="content" id="content" cols="48" rows="10"></textarea></td>
 </tr> -->
+<tr>
+	<td><label for="content">comment</label></td>
+	<td>{{ f.content }}</td>
+	<td>{{ f.content.errors }}</td>
+</tr>
 	</table>
 	<input type="submit" value="給予評價">
 </form>
