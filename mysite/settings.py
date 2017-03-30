@@ -123,3 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "webContent"), 
 ]
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers' + '.PickleSerializer'
+LOGIN_REDIRECT_URL = '/index/'

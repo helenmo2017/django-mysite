@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title%}{% endblock %}</title>
+	{% block head %}{% endblock %}
+</head>
+<body>
+<nav>
+	| <a href="/index/">index</a> |
+	  <a href="/restaurants_list/">restaurant list</a> |
+	{% if request.user.is_authenticated %}
+		{{ request.user }}, <a href="/accounts/logout/">logout</a> |
+	{% else %}
+		<a href="/accounts/login/">login</a> |
+		<a href="/accounts/register/">register</a> |
+	{% endif %}
+</nav>	
+<h2>{% block h2 %}{% endblock %}</h2>
+{% block content %} {% endblock %}
+</body>
+</html>

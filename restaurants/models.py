@@ -19,12 +19,17 @@ class Food(models.Model):
         return self.name
 
 class Comment(models.Model):
-	content = models.CharField(max_length=255)
-	visitor = models.CharField(max_length=255)
-	email = models.EmailField(max_length=255)
-	date_time = models.DateTimeField()
-	restaurant = models.ForeignKey(Restaurant)
+    content = models.CharField(max_length=255)
+    visitor = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    date_time = models.DateTimeField()
+    restaurant = models.ForeignKey(Restaurant)
 
-	def __str__(self):
-		return self.visitor
-		
+    def __str__(self):
+        return self.visitor
+
+    class Meta(object):
+        ordering = ['date_time']
+        permissions = (("can_comment", "Can comment"),
+        )
+        

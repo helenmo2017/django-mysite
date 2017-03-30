@@ -10,7 +10,7 @@ class FoodAdmin(admin.ModelAdmin):
     list_filter = ('is_spicy',)
     fields = ('restaurant','price','is_spicy')
     ordering = ('-price',)
-						
+                        
 
 admin.site.register(Restaurant, RestaurantAdmin)
 admin.site.register(Food, FoodAdmin)

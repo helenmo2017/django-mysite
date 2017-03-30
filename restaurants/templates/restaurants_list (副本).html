@@ -1,7 +1,9 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
 
-{% block title %} Restaurants List {% endblock %}
-{% block head %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -13,10 +15,8 @@
 	div.menus{text-align: center; padding: 40px 15px;}
 
 </style>
-{% endblock %}
-{% block h2%} Restaurants List {% endblock %}
-
-{% block content %}
+</head>
+<body>
 	<nav class=navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
@@ -31,7 +31,7 @@
 
 	<h2>Restaurants</h2>
 
-		<!-- <h3>No: {{forloop.counter}} </h3> -->
+		<h3>No: {{forloop.counter}} </h3>
 		<table class="table table-bordered table-striped " align="center">
 			<thead>
 			<tr>
@@ -56,4 +56,6 @@
 	</div>
 
 	</div></div>
-{% endblock %}
+</body>
+</html> 
+

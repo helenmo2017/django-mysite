@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from restaurants.views import menu, restaurants_list, comment, set_c, get_c
+from restaurants.views import menu, restaurants_list, comment, set_c, get_c, use_session, session_test
+from mysite.views import index, register
+from django.contrib.auth.views import login, logout
 
 
 urlpatterns = [
@@ -25,4 +27,10 @@ urlpatterns = [
     url(r'^comment/(\d{1,5})/$', comment),
     url(r'^set_c/', set_c),
     url(r'^get_c/', get_c),
+    url(r'^use_session/', use_session),
+   
+    url(r'^accounts/login/$', login),
+    url(r'^accounts/logout/$', logout),
+    url(r'^accounts/register/$', register),
+    url(r'^index/$', index),
 ]
