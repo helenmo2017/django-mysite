@@ -40,23 +40,12 @@
 {% csrf_token %}
 	<table>
 	{{ f.as_table }}
-<!-- 		<tr>
-	<td><label for="visitor">留言者</label></td>
-	<td><input type="text" id="visitor" name="visitor" value="{{visitor}}"></td>
-</tr>
-<tr>
-	<td><label for="email">email</label></td>
-	<td><input type="text" id="email" name="email" value={{email}}></td>
-</tr>
-<tr>
-	<td><label for="content">comment</label></td>
-	<td><textarea name="content" id="content" cols="48" rows="10"></textarea></td>
-</tr> -->
-<tr>
+
+<!-- <tr>
 	<td><label for="content">comment</label></td>
 	<td>{{ f.content }}</td>
 	<td>{{ f.content.errors }}</td>
-</tr>
+</tr> -->
 	</table>
 	<input type="submit" value="給予評價">
 </form>
