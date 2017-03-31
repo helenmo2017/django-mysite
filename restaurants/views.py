@@ -19,6 +19,7 @@ def restaurants_list(request):
     
     return render_to_response('restaurants_list.html', locals())
 
+@login_required
 def menu(request, id):
     if id:
         restaurant = Restaurant.objects.get(id=id)
@@ -82,4 +83,7 @@ def session_test(request):
         s_info = 'cookies is not allow'
     request.session.set_test_cookie()
     return HttpResponse(s_info)
+
+def test(request):
+    return HttpResponse("it's a test")
 

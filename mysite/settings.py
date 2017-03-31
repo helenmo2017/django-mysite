@@ -25,7 +25,7 @@ SECRET_KEY = 'o5kq6pdg+%$l*(dnx8^46s4qemu6jt059^v(zacqzk!_fe84$3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1'] 
 
 
 # Application definition
@@ -121,8 +121,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "webContent"), 
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers' + '.PickleSerializer'

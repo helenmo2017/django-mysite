@@ -34,3 +34,4 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request,'register.html',locals())
+

@@ -8,7 +8,8 @@
 <body>
 <nav>
 	| <a href="/index/">index</a> |
-	  <a href="/restaurants_list/">restaurant list</a> |
+	  <a href="/restaurants/list/">restaurant list</a> |
+	  <a href="/restaurants/mos_menu/">Mos</a> |
 	{% if request.user.is_authenticated %}
 		{{ request.user }}, <a href="/accounts/logout/">logout</a> |
 	{% else %}
