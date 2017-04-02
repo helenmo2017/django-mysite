@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpRequest
 from django.template import RequestContext
 from django.contrib import auth
 from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
 
 def login(request):
     if request.user.is_authenticated():
