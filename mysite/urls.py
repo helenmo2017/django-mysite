@@ -17,19 +17,22 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
 from django.conf import settings
-from mysite.views import index, register
+from mysite.views import register, HereView, IndexView
 import restaurants.views
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/login/$', login),
     url(r'^accounts/logout/$', logout),
     url(r'^accounts/register/$', register),
-    url(r'^index/$', index),
+    url(r'^index/$', IndexView.as_view()),
     url(r'^restaurants/', include('restaurants.urls')),
+    url(r'^here/$', HereView.as_view()),
 ]
 
 if settings.DEBUG:
     urlpatterns += [
         url(r'^test/$', restaurants.views.test), 
     ]
+
