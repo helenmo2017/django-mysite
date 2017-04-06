@@ -4,5 +4,11 @@
 {% block h2%} My Restaurants {% endblock %}
 
 {% block content %}
-<h2> Welcome to my restaurants </h2>
+<h2> Hi {{ request.user }}, Welcome to my restaurants </h2>
+
+{% if request.user.is_authenticated %}
+	Hola! {{ request.user.username }} / {{ request.user.password }}
+{% else %}
+   you can't be here
+{% endif %}
 {% endblock %}

@@ -48,4 +48,7 @@ class HereView(View):
     def get(self, request):
         return HttpResponse("I am here!! ")
 
+def showNumber(request):
+    List = map(str, range(100))
+    return render(request, 'test2.html', {'List':List})
 

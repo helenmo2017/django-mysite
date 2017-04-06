@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
 from django.conf import settings
-from mysite.views import register, HereView, IndexView
+from mysite.views import register, HereView, IndexView, showNumber
 import restaurants.views
 from django.views.generic.base import TemplateView
 
@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^index/$', IndexView.as_view()),
     url(r'^restaurants/', include('restaurants.urls')),
     url(r'^here/$', HereView.as_view()),
+    url(r'^shownum99/$', showNumber),
 ]
 
 if settings.DEBUG:

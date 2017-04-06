@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		
+		alert( [9,4].concat([8,7]).sort().filter(x =>x > 5) )
+
+		var arr =['Mo', 'Helen'];
+		arr.forEach(item => alert(item));
+		
+	</script>
+</head>
+<body>
+	{% for item in List %}
+		{{item}} {% if not forloop.last %}, {% endif %}
+	{% empty %}
+		Nothing to write home about
+	{% endfor %}
+</body>
+</html>
